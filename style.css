@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 *, *::after, *::before {
     padding: 0;
     margin: 0;
@@ -7,15 +9,76 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: "Roboto", sans-serif, "Times New Roman";
+    --dark-bg: #1F2937;
+    --header-white: #E5E7EB;
+    --header-whitest: #F9FAF8;
+    --button-color: #3882F6;
+    --regular-color: #1F2937;
+    --quote-color: #E5E7EB;
 }
 
 .main-header, .hero, footer {
     display: flex;
-    background-color: #1F2937;
-    color: #E5E7EB
+    background-color: var(--dark-bg);
+    color: var(--header-white)
 }
 
-h1 {
-    color: #F9FAF8
+.main-header {
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
 }
 
+.logo {
+    color: var(--header-whitest);
+    font-size: 1.5rem;
+}
+
+.links {
+    font-size: 18px;
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--header-white)
+}
+
+.hero {
+    display: flex;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    justify-content: space-around;
+    gap: 1.5rem;
+}
+
+.hero-content {
+    align-content: center;
+    margin-left: 3rem
+}
+.hero-content h1 {
+    color: var(--header-whitest);
+    font-size: 3rem;
+    display: flex;
+}
+.hero-content p {
+    color: var(--header-white);
+    font-size: 18px;
+}
+.hero-content button {
+    background-color: var(--button-color);
+    color: var(--header-whitest);
+    font-size: 18px;
+    padding: 0.5rem 2rem;
+    border: 0px;
+    border-radius: 8px;
+}
+.hero img {
+    min-width: 300px;
+    min-height: 100px;
+    border: 3px solid black;
+    margin-right: 1rem;
+}
