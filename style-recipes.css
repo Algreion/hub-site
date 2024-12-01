@@ -1,0 +1,33 @@
+body {
+    background-color:bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color:crimson;
+    text-shadow: 5px 5px 6px black
+}
+
+h2 {
+    text-align: center;
+    color: navy;
+}
+li {
+    color: rgb(0, 0, 130)
+}
+
+.image {
+    text-align:center;
+}
+
+.cover {
+    max-width:50%;
+    max-height:18rem;
+}
+
+.reel {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
