@@ -8,6 +8,7 @@ const scissors = document.querySelector("#scissors")
 const playerImg = document.querySelector("#player")
 const opponentImg = document.querySelector("#opponent")
 const message = document.querySelector("#message")
+const reset = document.querySelector("#reset")
 
 let playerScore = 0;
 let opponentScore = 0;
@@ -24,11 +25,14 @@ scissors.addEventListener("click", () => playerChoice("scissors"));
 
 function playerChoice (choice) {
     playerImg.src = images[choice];
-    const choices = ["rock","paper","scissors"];
-    const opponentChoice = choices[Math.floor(Math.random() * choices.length)];
-    opponentImg.src = images[opponentChoice];
-    const result = findResult(choice, opponentChoice);
-    updateStatus(result, choice, opponentChoice);
+    setTimeout(() => {
+        const choices = ["rock","paper","scissors"];
+        const opponentChoice = choices[Math.floor(Math.random() * choices.length)];
+        opponentImg.src = images[opponentChoice];
+        const result = findResult(choice, opponentChoice);
+        updateStatus(result, choice, opponentChoice);
+    }, 100);
+    
 }
 
 function findResult(player, opponent) {
@@ -58,4 +62,17 @@ function updateStatus(result, choice, opponentChoice) {
     document.querySelector(".player").textContent = `Player | Score: ${playerScore}`;
     document.querySelector(".opponent").textContent = `Rock Giant | Score: ${opponentScore}`;
 }
+
+reset.addEventListener("click", () => {
+    playerScore = 0;
+    opponentScore = 0;
+    updateStatus("tie","","");
+    message.textContent = "Make your choice:";
+});
+
+// Preload images:
+Object.values(images).forEach((src) => {
+    const img = new Image();
+    img.src = src;
+});
 
