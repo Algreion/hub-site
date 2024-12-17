@@ -1,3 +1,6 @@
+//TODO: Make previous work, re-add DEL, EXP and PARENTHESIS (or something similar), fix look
+// Also maybe add animations or something like that
+
 const elements = {
     output: document.querySelector(".header"),
     clear: document.querySelector("#CLS"),
@@ -18,8 +21,7 @@ const elements = {
     plus: document.querySelector("#plus"),
     equal: document.querySelector("#equal"),
     previous: document.querySelector("#previous"),
-    del: document.querySelector("#del"),
-    exp: document.querySelector("#exponent"),
+    del: document.querySelector("#del")
 }
 
 let previous = ""
@@ -84,10 +86,3 @@ elements.zero.addEventListener("click", () => handleResult(0));
 elements.plus.addEventListener("click", () => handleResult("+"));
 elements.equal.addEventListener("click", () => handleResult("="));
 elements.del.addEventListener("click", () => handleResult("DEL"));
-
-elements.previous.addEventListener("click", () => {
-    if (result !== 0) {
-        expression += result;
-        displayExpression(expression);
-    }
-});
