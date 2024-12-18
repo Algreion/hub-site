@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Aldrich&display=swap');
 
+/*TODO: Improve aesthetic, refactor colors (as variables) and make them better*/
+
 * {
     color: white;
     font-family: Aldrich, Helvetica, sans-serif;
 }
 
 body {
-    background-color: black;
+    background-color: rgb(3, 0, 15);
 }
 
 .header {
@@ -19,12 +21,11 @@ body {
     align-items: center;
     background-color: rgb(33, 18, 85);
     padding: 0 1rem;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     margin-bottom: 3rem;
     border: 0.5rem inset rgb(2, 1, 53);
     border-radius: 1.5rem;
+    -ms-word-break: break-all;
+    word-break: break-all;
 }
 
 .board {
@@ -60,15 +61,48 @@ body {
     min-width: 10rem;
 }
 
+.buttons button {
+    transition: all 0.1s ease;
+}
+
+button:active, button.hl {
+    transform: scale(0.95);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.buttons button:focus-visible {
+    outline: 3px solid rgb(0, 255, 255);
+    outline-offset: 5px;
+    transform: scale(1.05);
+    background-color: rgb(0, 170, 170);
+}
+
+#plus.hl, #plus:active {
+    background-color: rgb(0, 255, 128);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 255, 128, 0.8);
+}
+
+#del.hl, #del:active, #CLS:active, #CLS.hl {
+    background-color: rgb(255, 69, 0);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8);
+}
+
 #del {
     background-color: rgb(197, 39, 0);
+    border-color: rgb(255, 0, 64);
+}
+
+#CLS {
+    border-color: rgb(255, 0, 0);
 }
 
 #del:hover {
     background-color: rgb(226, 0, 0);
 }
 
-#del:active {
+#del:active, #del.hl {
     background-color: rgb(255, 0, 0);
 }
 
@@ -96,7 +130,8 @@ body {
     background-color: rgb(0, 170, 170);
     cursor: pointer;
 }
-.buttons button:active {
+
+.buttons button:active, .buttons button.hl  {
     background-color: rgb(0, 212, 212);
 }
 
@@ -104,7 +139,10 @@ body {
     background-color: rgb(207, 0, 0);
     cursor: pointer;
 }
-.modes button:active {
+.modes button:active, .modes button.hl {
     background-color: rgb(255, 0, 0);
 }
 
+.upper-buttons button{
+    min-height: 2rem;
+}
