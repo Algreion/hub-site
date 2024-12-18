@@ -27,11 +27,11 @@ const elements = {
 }
 
 let previous = ""
-let expression = ""
+let expression = "0"
 
 function displayResult (res) {
     elements.prev.textContent = previous;
-    previous = String(res)
+    previous = res
     elements.output.textContent = res
 }
 
@@ -40,7 +40,7 @@ function displayExpression(exp) {
     elements.output.textContent = exp
 }
 
-function handleResult(input) {
+function handleResult(input, f=false) {
     if (typeof input === "number" || input === ".") {
         expression += input;
         if (expression.length > 1 && expression[0] == "0" && 
@@ -54,7 +54,8 @@ function handleResult(input) {
     } else if (input === "=") {
         try {
             const cleanExpression = expression.replace(/x/g, "*").replace(/÷/g, "/").replace(/\^/g, "**");
-            const evalResult = eval(cleanExpression);
+            let evalResult = eval(cleanExpression);
+            if (f) {evalResult = Math.floor(evalResult)}
             displayResult(evalResult);
             expression = String(evalResult);
         } catch (error) {
@@ -67,13 +68,15 @@ function handleResult(input) {
         displayResult(0);
         return;
     } else if (input === "DEL") {
-        if (expression == "Infinity" || expression == "NaN") {expression = "0"}
+        if (expression == "Infinity" || expression == "NaN" || expression == "undefined") {expression = "0"}
         else {expression.length > 1 ? expression = expression.slice(0, -1) : expression = "0"}
     } else if (input === "PREV") {
         expression = elements.prev.textContent
     } else if (input === "(" || input === ")") {
         expression === "0" ? expression = input : expression += input
-    }
+    } else if (input === "e") {
+        expression += input
+    } 
     displayExpression(expression);
 }
 
@@ -180,10 +183,14 @@ document.addEventListener("keydown", (event) => {
         handleResult("CLS");
         elements.clear.classList.add("hl");
         setTimeout(() => elements.clear.classList.remove("hl"), 150);
+    } else if (key === "e") {
+        handleResult("e");
+    } else if (key === "f") {
+        handleResult("=",true)
     }
 });
 
-document.querySelectorAll(".buttons button").forEach(button => {
+document.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", (event) => {
         event.target.blur();
     });
