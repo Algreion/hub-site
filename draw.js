@@ -12,13 +12,14 @@ const elements = {
     pink: document.querySelector("#p"),
     cyan: document.querySelector("#c"),
     orange: document.querySelector("#o"),
-    violet: document.querySelector("#v"),
     board: document.querySelector(".board"),
     nInput: document.querySelector("#numberInput"),
+    rainbow: document.querySelector("#rainbow"),
 }
 
 let curr = "black"
 let drawing = true
+let rand = false
 let cells = 16
 
 function generate (n) {
@@ -32,6 +33,13 @@ function generate (n) {
         cell.addEventListener("click", () => {if (drawing) {cell.style.backgroundColor = curr}})
     }
 };
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 function paint () {
     const all = document.querySelectorAll(".board .cell")
@@ -47,45 +55,38 @@ function wipe () {
     curr = prev;
 }
 
+function handleColor (color) {
+    rand = false
+    curr = color
+    elements.current.style.backgroundColor = curr
+}
+
 elements.red.addEventListener("click", () => {
-    curr = "red";
-    elements.current.style.backgroundColor = "red";
+    handleColor("red")
 })
 elements.green.addEventListener("click", () => {
-    curr = "lime";
-    elements.current.style.backgroundColor = "lime";
+    handleColor("lime")
 })
 elements.blue.addEventListener("click", () => {
-    curr = "blue";
-    elements.current.style.backgroundColor = "blue";
+    handleColor("blue")
 })
 elements.yellow.addEventListener("click", () => {
-    curr = "yellow";
-    elements.current.style.backgroundColor = "yellow";
+    handleColor("yellow")
 })
 elements.black.addEventListener("click", () => {
-    curr = "black";
-    elements.current.style.backgroundColor = "black";
+    handleColor("black")
 })
 elements.white.addEventListener("click", () => {
-    curr = "white";
-    elements.current.style.backgroundColor = "white";
+    handleColor("white")
 })
 elements.cyan.addEventListener("click", () => {
-    curr = "cyan";
-    elements.current.style.backgroundColor = "cyan";
+    handleColor("cyan")
 })
 elements.pink.addEventListener("click", () => {
-    curr = "fuchsia";
-    elements.current.style.backgroundColor = "fuchsia";
+    handleColor("fuchsia")
 })
 elements.orange.addEventListener("click", () => {
-    curr = "orange";
-    elements.current.style.backgroundColor = "orange";
-})
-elements.violet.addEventListener("click", () => {
-    curr = "blueviolet";
-    elements.current.style.backgroundColor = "blueviolet";
+    handleColor("orange")
 })
 
 
@@ -111,18 +112,61 @@ document.addEventListener("keydown", (event) => {
     if (key === "d") {
         drawing = !drawing
         elements.draw.classList.add("hl");
-        setTimeout(() => elements.draw.classList.remove("hl"), 150);
+        setTimeout(() => elements.draw.classList.remove("hl"), 200);
     } else if (key === "n") {
         cells = Number(elements.nInput.value);
         isNaN(cells) ? cells = 16 : cells > 100 ? cells = 100 : cells = cells
         generate(cells);
         elements.gen.classList.add("hl");
-        setTimeout(() => elements.gen.classList.remove("hl"), 150);
+        setTimeout(() => elements.gen.classList.remove("hl"), 200);
     } else if (key === "c") {
         wipe();
         elements.clear.classList.add("hl");
-        setTimeout(() => elements.clear.classList.remove("hl"), 150);
-    }})
+        setTimeout(() => elements.clear.classList.remove("hl"), 200);
+    } else if (!isNaN(key)) {
+        if (key == 1) {
+            handleColor("red")
+            elements.red.classList.add("hl");
+            setTimeout(() => elements.red.classList.remove("hl"), 200);
+        } else if (key == 2) {
+            handleColor("orange")
+            elements.orange.classList.add("hl");
+            setTimeout(() => elements.orange.classList.remove("hl"), 200);
+        } else if (key == 3) {
+            handleColor("yellow")
+            elements.yellow.classList.add("hl");
+            setTimeout(() => elements.yellow.classList.remove("hl"), 200);
+        } else if (key == 4) {
+            handleColor("lime")
+            elements.green.classList.add("hl");
+            setTimeout(() => elements.green.classList.remove("hl"), 200);
+        } else if (key == 5) {
+            handleColor("cyan")
+            elements.cyan.classList.add("hl");
+            setTimeout(() => elements.cyan.classList.remove("hl"), 200);
+        } else if (key == 6) {
+            handleColor("blue")
+            elements.blue.classList.add("hl");
+            setTimeout(() => elements.blue.classList.remove("hl"), 200);
+        } else if (key == 7) {
+            handleColor("fuchsia")
+            elements.pink.classList.add("hl");
+            setTimeout(() => elements.pink.classList.remove("hl"), 200);
+        } else if (key == 8) {
+            handleColor("black")
+            elements.black.classList.add("hl");
+            setTimeout(() => elements.black.classList.remove("hl"), 200);
+        } else if (key == 9) {
+            handleColor("white")
+            elements.white.classList.add("hl");
+            setTimeout(() => elements.white.classList.remove("hl"), 200);
+        } else if (key == 0) {
+            handleColor(getRandomColor())
+            elements.rainbow.classList.add("hl");
+            setTimeout(() => elements.rainbow.classList.remove("hl"), 200);
+        }
+    }
+})
 
 document.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", (event) => {
