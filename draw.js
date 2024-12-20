@@ -56,37 +56,40 @@ function wipe () {
 }
 
 function handleColor (color) {
-    rand = false
-    curr = color
-    elements.current.style.backgroundColor = curr
+    rand = false;
+    curr = color;
+    elements.current.style.backgroundColor = curr;
 }
 
 elements.red.addEventListener("click", () => {
-    handleColor("red")
+    handleColor("red");
 })
 elements.green.addEventListener("click", () => {
-    handleColor("lime")
+    handleColor("lime");
 })
 elements.blue.addEventListener("click", () => {
-    handleColor("blue")
+    handleColor("blue");
 })
 elements.yellow.addEventListener("click", () => {
-    handleColor("yellow")
+    handleColor("yellow");
 })
 elements.black.addEventListener("click", () => {
-    handleColor("black")
+    handleColor("black");
 })
 elements.white.addEventListener("click", () => {
-    handleColor("white")
+    handleColor("white");
 })
 elements.cyan.addEventListener("click", () => {
-    handleColor("cyan")
+    handleColor("cyan");
 })
 elements.pink.addEventListener("click", () => {
-    handleColor("fuchsia")
+    handleColor("fuchsia");
 })
 elements.orange.addEventListener("click", () => {
-    handleColor("orange")
+    handleColor("orange");
+})
+elements.rainbow.addEventListener("click", () => {
+    handleColor(getRandomColor());
 })
 
 
@@ -104,6 +107,8 @@ elements.draw.addEventListener("click", () => {
 
 elements.gen.addEventListener("click", () => {
     cells = Number(elements.nInput.value);
+    if (isNaN(cells) || cells < 1) {cells = 16};
+    cells > 64 ? cells = 64 : cells = cells;
     generate(cells);
 })
 
@@ -115,7 +120,8 @@ document.addEventListener("keydown", (event) => {
         setTimeout(() => elements.draw.classList.remove("hl"), 200);
     } else if (key === "n") {
         cells = Number(elements.nInput.value);
-        isNaN(cells) ? cells = 16 : cells > 100 ? cells = 100 : cells = cells
+        if (isNaN(cells) || cells < 1) {cells = 16}
+        cells > 64 ? cells = 64 : cells = cells;
         generate(cells);
         elements.gen.classList.add("hl");
         setTimeout(() => elements.gen.classList.remove("hl"), 200);
