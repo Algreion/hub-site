@@ -30,7 +30,7 @@ h1 {
 
 .options, .colors {
     display: flex;
-    width: 70vh;
+    width: 640px;
     justify-content: center;
     gap: 1vh;
 }
