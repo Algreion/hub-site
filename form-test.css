@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+
+:root {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.left {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 40%;
+    left: 0px;
+    background: url(https://images.unsplash.com/photo-1732621745411-85e13660257a?q=80&w=800&h=950&auto=format);
+
+}
+
+.right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 60%;
+    background: linear-gradient(rgb(219, 243, 250),rgb(146, 239, 255));
+}
+
+.logo, #credit {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    font-family: Rye, Verdana, Arial;
+}
+
+#log {
+    font-size: 3rem;
+    opacity: 1;
+}
+
+#credit {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+.left a {
+    color: white;
+}
+
+.msg {
+    padding: 10%;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+
+.signup {
+    background-color: #fffef9;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    margin: 5% 0;
+    box-shadow: 3px 3px 10px rgb(83, 83, 83);
+}
+
+fieldset {
+    border-style: hidden;
+    display: flex;
+    gap: 3rem; 
+}
+
+label {
+    font-size: 0.7rem;
+    font-family: georgia;
+    font-weight: 550;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#create {
+    color: white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-left: 3rem;
+    box-shadow: 2px 2px 6px rgb(156, 156, 156);
+    background: linear-gradient(45deg,rgb(93, 122, 253),blue);
+    border-style: hidden;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.5rem;
+}
+
+#login {
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+}
+
+#login a {
+    text-decoration: none;
+    font-weight: 550;
+    color: rgb(0, 38, 206);
+}
+
+#create:hover {
+    transform: scale(1.1);
+    background: linear-gradient(300deg,rgb(57, 90, 236),rgb(151, 164, 226));
+    cursor: pointer;
+}
+
+#create:active {
+    transform: scale(1.2);
+    background: blue;
+    cursor: pointer;
+}
