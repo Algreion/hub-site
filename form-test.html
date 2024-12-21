@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Form</title>
+    <link rel="stylesheet" href="form-test.css">
+</head>
+<body>
+    <div class="left">
+        <div class="logo">
+            <div id="log">🔱 POSEIDON</div>
+        </div>
+        <div id="credit">Photo by <a href="https://unsplash.com/@max_thehuman?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" rel="noopener noreferrer">Max Böhme</a> on <a href="https://unsplash.com/photos/a-large-body-of-water-sitting-under-a-blue-sky-0B9tgN-0if8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" rel="noopener noreferrer">Unsplash</a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="msg">Have you ever wished of sailing the seas and experience true luxury?
+            <br>Realize your dreams today and join Poseidon, <em>the</em> most prestigious Yacht Club on Earth.
+            <br><br>We have been waiting for you.
+        </div>  
+        <div class="signup">
+            <p style="font-weight:900;">Join us!</p>
+            <form action="example.com/path" method="post">
+                <fieldset>
+                    <div>
+                        <label for="firstname">FIRST NAME</label>
+                        <input type="text" id="firstname" name="first_name" placeholder="John" required>
+                    </div>
+                    <div>
+                        <label for="lastname">LAST NAME</label>
+                        <input type="text" id="lastname" name="last_name" placeholder="Smith" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <div>
+                        <label for="phone_number">PHONE NUMBER</label>
+                        <input type="phone" name="phone" id="phone_number" placeholder="+11 111 111 1111" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div>
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div>
+                        <label for="confirm_password">CONFIRM PASSWORD</label>
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="account">
+            <button id="create">Create account</button>
+            <div id="login">Already have an account? <a href="#">Log in</a></div>
+        </div>
+    </div>
+</body>
+</html>
