@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool GIFs</title>
+    <style>
+        body {
+            background-color: #cdd2e7;
+            background-image: url("data:image/svg+xml,%3Csvg width='59' height='27' viewBox='0 0 59 27' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231800a1' fill-opacity='0.25'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            display: flex;
+            height: 90vh;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            gap:1rem;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 0.1rem;
+        }
+        img {
+            width: minmax(100px, 640px);
+            height: minmax(100px, 640px);
+            border: 1px solid black;
+        }
+        img[src="#"] {
+            display: none;
+        }
+        #inp {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        #search {
+            border: none;
+            color:white;
+            background: rgb(109, 109, 255);
+            border-radius: 5px;
+            min-height: 1.5rem;
+        }
+        #search:hover {
+            cursor: pointer;
+            outline: 1px solid rgb(0, 15, 146);
+        }
+        #search:active {
+            outline: 1px solid white;
+        }
+        #msg {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-decoration:underline;">GIF Viewer</h1>
+    <img src="#" alt="gif">
+    <div class="stuff">
+        <div class="items">
+            <input type="text" id="inp" placeholder="Cats">
+            <button id="search">Enter</button>
+        </div>
+        <p id="msg"></p>
+    </div>
+    <script>
+        const key1 = "O3aTAPJcwcICok8Gv7yFmdGIGUdT4aKK";
+        const key2 = "55U33Y727VWXWXZ158T4226947YX2TV7";
+        const img = document.querySelector("img");
+        const text = document.querySelector("#inp");
+        const search = document.querySelector("#search");
+        const msg = document.querySelector("#msg");
+        const shiftValue = Number(key1[17])
+        function decipher(string) {
+            const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            let result = "";
+            for (let i = 0; i < string.length; i++) {
+            const char = string[i];
+            const index = alphabet.indexOf(char);
+            const shiftedIndex = (index + shiftValue + alphabet.length) % alphabet.length; 
+            result += alphabet[shiftedIndex];
+            }
+        return result;
+        }
+        function getGIF (query, k) {
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${k}&s=${query}`, {mode:"cors"})
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                img.src = response.data.images.original.url;
+                msg.textContent = `Here is a GIF of ${query}!`;
+            })
+            .catch(e => {
+                msg.textContent = `There has been an error: ${e}`;
+            });
+        };
+        search.addEventListener("click", () => {
+            const txt = text.value || "cats";
+            let key = decipher(key1)
+            getGIF(txt, key)
+        });
+    </script>
+</body>
+</html>
