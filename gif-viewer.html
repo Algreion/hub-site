@@ -20,9 +20,11 @@
             font-size: 3rem;
             letter-spacing: 0.1rem;
         }
-        img {
+        .container {
             width: minmax(100px, 640px);
             height: minmax(100px, 640px);
+        }
+        img {
             border: 1px solid black;
         }
         img[src="#"] {
@@ -170,15 +172,6 @@
             } catch (e) {
                 console.error("Failed to download image: " + e);
                 msg.textContent = "Download failed: " + e
-            }
-        })
-        body.addEventListener("keydown", (key) => {
-            if (key === "c") {
-                copy.click();
-            } else if (key === "d") {
-                download.click();
-            } else if (key === "s") {
-                search.click();
             }
         })
     </script>
