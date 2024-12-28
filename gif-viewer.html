@@ -50,25 +50,63 @@
         #msg {
             text-align: center;
         }
+        #copy, #download {
+            display: none;
+        }
+        #copy:hover, #download:hover {
+            cursor: pointer;
+            fill: rgb(43, 43, 43);
+        }
+        #copy:active, #download:active {
+            fill: black;
+        }
+        .container {
+            position: relative;
+        }
+        .container:hover #copy {
+            display:block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .container:hover #download {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 44px;
+        }
     </style>
 </head>
 <body>
     <h1 style="text-decoration:underline;">GIF Viewer</h1>
-    <img src="#" alt="gif">
+    <div class="container">
+        <img src="#" alt="gif">
+        <svg id="copy" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="aliceblue" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"/>
+        </svg>
+        <svg id="download" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="aliceblue" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M13 11.15V4a1 1 0 1 0-2 0v7.15L8.78 8.374a1 1 0 1 0-1.56 1.25l4 5a1 1 0 0 0 1.56 0l4-5a1 1 0 1 0-1.56-1.25L13 11.15Z" clip-rule="evenodd"/>
+            <path fill-rule="evenodd" d="M9.657 15.874 7.358 13H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2.358l-2.3 2.874a3 3 0 0 1-4.685 0ZM17 16a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z" clip-rule="evenodd"/>
+        </svg>
+    </div>
     <div class="stuff">
         <div class="items">
             <input type="text" id="inp" placeholder="Cats">
-            <button id="search">Enter</button>
+            <button id="search">Search</button>
         </div>
         <p id="msg"></p>
     </div>
+
     <script>
-        const key1 = "O3aTAPJcwcICok8Gv7yFmdGIGUdT4aKK";
-        const key2 = "55U33Y727VWXWXZ158T4226947YX2TV7";
+        let key1 = "O3aTAPJcwcICok8Gv7yFmdGIGUdT4aKK";
+        let key2 = "55U33Y727VWXWXZ158T4226947YX2TV7";
         const img = document.querySelector("img");
         const text = document.querySelector("#inp");
         const search = document.querySelector("#search");
         const msg = document.querySelector("#msg");
+        const copy = document.querySelector("#copy")
+        const download = document.querySelector("#download")
         const shiftValue = Number(key1[17])
         function decipher(string) {
             const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -76,11 +114,13 @@
             for (let i = 0; i < string.length; i++) {
             const char = string[i];
             const index = alphabet.indexOf(char);
-            const shiftedIndex = (index + shiftValue + alphabet.length) % alphabet.length; 
+            const shiftedIndex = (index + shiftValue) % alphabet.length; 
             result += alphabet[shiftedIndex];
             }
         return result;
         }
+        key1 = decipher(key1)
+        key2 = decipher(key2)
         function getGIF (query, k) {
             fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${k}&s=${query}`, {mode:"cors"})
             .then((response) => {
@@ -96,9 +136,51 @@
         };
         search.addEventListener("click", () => {
             const txt = text.value || "cats";
-            let key = decipher(key1)
+            let key = key2
             getGIF(txt, key)
         });
+        copy.addEventListener("click", async () => {
+            try {
+                const temp = document.createElement("textarea");
+                temp.value = img.src;
+                document.body.appendChild(temp)
+                temp.select();
+                temp.setSelectionRange(0,99999);
+                document.execCommand("copy");
+                document.body.removeChild(temp);
+                msg.textContent = "Copied URL successfully!"
+            } catch (e) {
+                console.error("Failed to copy URL: ", e);
+                msg.textContent = "Copying URL failed: " + e
+            }
+        })
+        download.addEventListener("click", async () => {
+            try {
+                const response = await fetch(img.src);
+                const blob = await response.blob();
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                const fileName = "image.gif";
+                link.download = fileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(link.href);
+                msg.textContent = "Download successful!"
+            } catch (e) {
+                console.error("Failed to download image: " + e);
+                msg.textContent = "Download failed: " + e
+            }
+        })
+        body.addEventListener("keydown", (key) => {
+            if (key === "c") {
+                copy.click();
+            } else if (key === "d") {
+                download.click();
+            } else if (key === "s") {
+                search.click();
+            }
+        })
     </script>
 </body>
 </html>
