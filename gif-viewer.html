@@ -24,9 +24,6 @@
             width: minmax(100px, 640px);
             height: minmax(100px, 640px);
         }
-        img {
-            border: 1px solid black;
-        }
         img[src="#"] {
             display: none;
         }
@@ -161,8 +158,9 @@
                 const response = await fetch(img.src);
                 const blob = await response.blob();
                 const link = document.createElement("a");
+                const fin = text.value.toLowerCase() || lower("cats");
                 link.href = URL.createObjectURL(blob);
-                const fileName = "image.gif";
+                const fileName = fin+".gif";
                 link.download = fileName;
                 document.body.appendChild(link);
                 link.click();
