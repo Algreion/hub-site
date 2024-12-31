@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarklets</title>
+    <style>
+        :root {
+            --bg-color: rgb(32, 32, 32);
+            --text-color: rgb(209, 209, 214);
+            --header-color: rgb(250, 250, 250);
+            --button-color: rgb(0, 202, 108);
+            --link-color: mediumaquamarine;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            text-align: center;
+            background: black;
+            width: 100%;
+            opacity: 0.85;
+        }
+        h1, h2, h3 {
+            color: var(--header-color);
+        }
+        article {
+            margin: 0 2rem;
+        }
+        footer {
+            padding: 1rem 0;
+            background: black;
+            width: 100%;
+            text-align: center;
+            opacity: 0.8;
+        }
+        p,ul {
+            line-height: 2rem;
+        }
+        a {
+            color:var(--link-color);
+            font-weight: 600;
+        }
+        article div h3 {
+            padding: 0 1rem
+        }
+        article div div {
+            padding: 0 3rem;
+        }
+        button {
+            background: var(--button-color);
+            border-radius: 5px;
+            border: none;
+            padding: 0.25rem 1rem;
+            box-shadow: 1px 1px 6px black;
+            font-weight: 600;
+        }
+        button:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .options {
+            display: flex;
+            gap: 2rem;
+            padding: 0;
+        }
+        input {
+            background: var(--text-color);
+            border: 1px inset black;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Bookmarklets</h1></header>
+    <main>
+        <article>
+            <h2>Instructions</h2>
+            <p>Bookmarklets are snippets of Javascript that are executed locally on a webpage through a bookmark.
+                <br>They are similar to extensions, but are activated only when the user interacts with them. Learn more here: <a href="https://en.wikipedia.org/wiki/Bookmarklet">Bookmarklets</a>
+            </p>
+            <ul>
+                <li>To use the ones below, simply drag them to the bookmark tab at the top of the screen.</li>
+                <li>Alternatively, click the source code below to copy it, then paste it in the URL section of a new bookmark.</li>
+                <li>To use them on a website, simply click the icon.</li>
+                <li>If on mobile, type the bookmarklet's name in the search bar while on a site and click the first result.</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Top Picks</h2>
+            <div>
+                <h3>AdBlock
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="crimson" viewBox="0 0 24 17">
+                        <path d="M21.718 12c0-1.429-1.339-2.681-3.467-3.5.029-.18.077-.37.1-.545.217-2.058-.273-3.543-1.379-4.182-1.235-.714-2.983-.186-4.751 1.239C10.45 3.589 8.7 3.061 7.468 3.773c-1.107.639-1.6 2.124-1.379 4.182.018.175.067.365.095.545-2.127.819-3.466 2.071-3.466 3.5 0 1.429 1.339 2.681 3.466 3.5-.028.18-.077.37-.095.545-.218 2.058.272 3.543 1.379 4.182.376.213.803.322 1.235.316a5.987 5.987 0 0 0 3.514-1.56 5.992 5.992 0 0 0 3.515 1.56 2.44 2.44 0 0 0 1.236-.316c1.106-.639 1.6-2.124 1.379-4.182-.019-.175-.067-.365-.1-.545 2.132-.819 3.471-2.071 3.471-3.5Zm-6.01-7.548a1.5 1.5 0 0 1 .76.187c.733.424 1.055 1.593.884 3.212-.012.106-.043.222-.058.33-.841-.243-1.7-.418-2.57-.523a16.165 16.165 0 0 0-1.747-1.972 4.9 4.9 0 0 1 2.731-1.234Zm-7.917 8.781c.172.34.335.68.529 1.017.194.337.395.656.6.969a14.09 14.09 0 0 1-1.607-.376 14.38 14.38 0 0 1 .478-1.61Zm-.479-4.076a14.085 14.085 0 0 1 1.607-.376c-.205.313-.405.634-.6.969-.195.335-.357.677-.529 1.017-.19-.527-.35-1.064-.478-1.61ZM8.3 12a19.32 19.32 0 0 1 .888-1.75c.33-.568.69-1.118 1.076-1.65.619-.061 1.27-.1 1.954-.1.684 0 1.333.035 1.952.1a19.63 19.63 0 0 1 1.079 1.654c.325.567.621 1.15.887 1.746a18.869 18.869 0 0 1-1.953 3.403 19.218 19.218 0 0 1-3.931 0 20.169 20.169 0 0 1-1.066-1.653A19.324 19.324 0 0 1 8.3 12Zm7.816 2.25c.2-.337.358-.677.53-1.017.191.527.35 1.065.478 1.611a14.48 14.48 0 0 1-1.607.376c.202-.314.404-.635.597-.97h.002Zm.53-3.483c-.172-.34-.335-.68-.53-1.017a20.214 20.214 0 0 0-.6-.97c.542.095 1.078.22 1.606.376a14.111 14.111 0 0 1-.478 1.611h.002ZM12.217 6.34c.4.375.777.773 1.13 1.193-.37-.02-.746-.033-1.129-.033s-.76.013-1.131.033c.353-.42.73-.817 1.13-1.193Zm-4.249-1.7a1.5 1.5 0 0 1 .76-.187 4.9 4.9 0 0 1 2.729 1.233A16.253 16.253 0 0 0 9.71 7.658c-.87.105-1.728.28-2.569.524-.015-.109-.047-.225-.058-.331-.171-1.619.151-2.787.885-3.211ZM3.718 12c0-.9.974-1.83 2.645-2.506.218.857.504 1.695.856 2.506-.352.811-.638 1.65-.856 2.506C4.692 13.83 3.718 12.9 3.718 12Zm4.25 7.361c-.734-.423-1.056-1.593-.885-3.212.011-.106.043-.222.058-.331.84.243 1.697.418 2.564.524a16.37 16.37 0 0 0 1.757 1.982c-1.421 1.109-2.714 1.488-3.494 1.037Zm3.11-2.895c.374.021.753.034 1.14.034.387 0 .765-.013 1.139-.034a14.4 14.4 0 0 1-1.14 1.215 14.248 14.248 0 0 1-1.139-1.215Zm5.39 2.895c-.782.451-2.075.072-3.5-1.038a16.248 16.248 0 0 0 1.757-1.981 16.41 16.41 0 0 0 2.565-.523c.015.108.046.224.058.33.175 1.619-.148 2.789-.88 3.212Zm1.6-4.854A16.563 16.563 0 0 0 17.216 12c.352-.812.638-1.65.856-2.507 1.671.677 2.646 1.607 2.646 2.507 0 .9-.975 1.83-2.646 2.507h-.004Z"/>
+                        <path d="M12.215 13.773a1.792 1.792 0 1 0-1.786-1.8v.006a1.787 1.787 0 0 0 1.786 1.794Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Drag this link to your bookmarks: <a href="#" id="adblock">AdBlock</a></p>
+                    <p>The only reason I can still use the internet without going crazy. Removes 99% of ads, popups, banners and cookie requests.<br>Note that it doesn't work on YouTube or similar websites. It also might incorrectly flag headers, menus or sidebars.</p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="adblock-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Dark Mode
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 20">
+                        <path stroke="bisque" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 0 1-.5-17.986V3c-.354.966-.5 1.911-.5 3a9 9 0 0 0 9 9c.239 0 .254.018.488 0A9.004 9.004 0 0 1 12 21Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Drag this link to your bookmarks: <a href="#" id="adblock">Dark</a></p>
+                    <p>Applies Dark Mode to the website's page, simple but effective. A button on the bottom right can toggle it off.
+                        <br>Best used on sites without a dark mode option already available.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="dark-input">
+                    </div>
+                </div>
+            </div>
+            
+        </article>
+        <article style="margin-top: 5rem;">
+            <h2>Full Library</h2>
+            <div>
+                <h3>Grayscale
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="gray" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Gray</a></p>
+                    <p>Loads the website in black and white. Good alternative to Dark Mode.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Raw HTML Viewer
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="orange" viewBox="0 0 24 19">
+                        <path d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">HTML</a></p>
+                    <p>Loads the site as a simple HTML page, removing all CSS and scripts.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>HTML Viewer+
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(215,0,0)" viewBox="0 0 24 19">
+                        <path d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">HTML+</a></p>
+                    <p>An extension of the previous bookmarklet, applies a custom styling for better readability.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Sepia
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(122, 96, 20)" viewBox="0 0 24 24">
+                        <path d="M12.013 6.175 7.006 9.369l5.007 3.194-5.007 3.193L2 12.545l5.006-3.193L2 6.175l5.006-3.194 5.007 3.194ZM6.981 17.806l5.006-3.193 5.006 3.193L11.987 21l-5.006-3.194Z"/>
+                        <path d="m12.013 12.545 5.006-3.194-5.006-3.176 4.98-3.194L22 6.175l-5.007 3.194L22 12.562l-5.007 3.194-4.98-3.211Z"/>
+                </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Sepia</a></p>
+                    <p>Loads the website with a sepia color scheme.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Blurry Screen
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5"/>
+                </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Blur</a></p>
+                    <p>Obfuscates the page.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Panic Button
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="red" stroke-linecap="round" stroke-width="2" d="m6 6 12 12m3-6a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Panic</a></p>
+                    <p>Turns the page into a regular Google page. Nothing to see here!
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Customizer
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="aliceblue" stroke-linecap="round" stroke-width="2" d="M6 4v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2m6-16v2m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v10m6-16v10m0 0a2 2 0 1 0 0 4m0-4a2 2 0 1 1 0 4m0 0v2"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Custom</a></p>
+                    <p>Allows you to customize the page, changing brightness, saturation, inverting colors and more.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Element Zapper
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="yellow" stroke-linejoin="round" stroke-width="2" d="m20.9532 11.7634-2.0523-2.05225-2.0523 2.05225 2.0523 2.0523 2.0523-2.0523Zm-1.3681-2.73651-4.1046-4.10457L12.06 8.3428l4.1046 4.1046 3.4205-3.42051Zm-4.1047 2.73651-2.7363-2.73638-8.20919 8.20918 2.73639 2.7364 8.2091-8.2092Z"/>
+                        <path stroke="yellow" stroke-linejoin="round" stroke-width="2" d="m12.9306 3.74083 1.8658 1.86571-2.0523 2.05229-1.5548-1.55476c-.995-.99505-3.23389-.49753-3.91799.18657l2.73639-2.73639c.6841-.68409 1.9901-.74628 2.9229.18658Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="adblock">Zap</a></p>
+                    <p>Allows you to easily delete anything from the current page.
+                    </p>
+                    <div class="options">
+                        <button>Source Code</button>
+                        <input type="text" placeholder="Change name" id="html-input">
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </main>
+    <footer>Code minified with blablabla</footer>
+</body>
+</html>
