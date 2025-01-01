@@ -11,6 +11,7 @@
             --header-color: rgb(250, 250, 250);
             --button-color: rgb(0, 202, 108);
             --link-color: mediumaquamarine;
+            --modify-color: rgb(207, 244, 255);
         }
         body {
             display: flex;
@@ -83,18 +84,61 @@
             background: var(--text-color);
             border: none;
         }
-
+        #adsim {
+            background: crimson;
+            color:white;
+        }
+        .adsimulation {
+            display: none;
+        }
+        .supersim {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #adsss {
+            width: 300px;
+            height: 250px;
+            top: 20px;
+            right: 20px;
+            background: red;
+            background-size: cover;
+            border: 2px solid #fff;
+            font-size: xx-large;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        #cookies {
+            width: 100%;
+            height: 200px;
+            bottom: 0;
+            background: rgba(245, 222, 179, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 90px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+        #buy {
+            width: 160px;
+            height: 600px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background: rgb(255, 255, 255);
+            background-size: cover;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header class="test"><h1>Bookmarklets</h1></header>
     <main>
-        <div class="adv" style="width:300px;height:300px;background:red;position:fixed;">
-            TODO:
-            ADS TEST(THIS)
-            ZAP DOESN'T work
-            CLICK DOESNT WORK
-        </div>
         <article>
             <h2>Instructions</h2>
             <p>Bookmarklets are snippets of Javascript that are executed locally on a webpage through a bookmark.
@@ -122,6 +166,7 @@
                     <div class="options">
                         <button id="adblock-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="adblock-input">
+                        <button id="adsim">Ads Test</button>
                     </div>
                 </div>
             </div>
@@ -176,8 +221,8 @@
                     <div class="options">
                         <button id="zapper-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="zapper-input">
-                        <input type="text" maxlength="20" placeholder="Color" id="zapchange1" style="width:50px;background:antiquewhite">
-                        <input type="text" maxlength="1" placeholder="Key" id="zapchange2" style="width:25px;background:antiquewhite">
+                        <input type="text" maxlength="20" placeholder="Color" id="zapchange1" style="width:50px;background:var(--modify-color)">
+                        <input type="text" maxlength="1" placeholder="Key" id="zapchange2" style="width:25px;background:var(--modify-color)">
                     </div>
                 </div>
             </div>
@@ -194,8 +239,25 @@
                     <div class="options">
                         <button id="autoclick-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="autoclick-input">
-                        <input type="number" min="1" max="60" placeholder="N" id="clickchange1" style="width:30px;background:antiquewhite">
-                        <input type="text" maxlength="1" placeholder="Key" id="clickchange2" style="width:25px;background:antiquewhite">
+                        <input type="number" min="1" max="60" placeholder="N" id="clickchange1" style="width:30px;background:var(--modify-color)">
+                        <input type="text" maxlength="1" placeholder="Key" id="clickchange2" style="width:25px;background:var(--modify-color)">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Saturate
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(0,255,235)" viewBox="0 0 24 24">
+                        <path d="m7.4 3.736 3.43 3.429A5.046 5.046 0 0 1 12.133 7c.356.01.71.06 1.056.147l3.41-3.412a2.32 2.32 0 0 1 .451-.344A9.89 9.89 0 0 0 12.268 2a10.022 10.022 0 0 0-5.322 1.392c.165.095.318.211.454.344Zm11.451 1.54-.127-.127a.5.5 0 0 0-.706 0l-2.932 2.932c.03.023.05.054.078.077.237.194.454.41.651.645.033.038.077.067.11.107l2.926-2.927a.5.5 0 0 0 0-.707Zm-2.931 9.81c-.025.03-.058.052-.082.082a4.97 4.97 0 0 1-.633.639c-.04.036-.072.083-.115.117l2.927 2.927a.5.5 0 0 0 .707 0l.127-.127a.5.5 0 0 0 0-.707l-2.932-2.931Zm-1.443-4.763a3.037 3.037 0 0 0-1.383-1.1l-.012-.007a2.956 2.956 0 0 0-1-.213H12a2.964 2.964 0 0 0-2.122.893c-.285.29-.509.634-.657 1.013l-.009.016a2.96 2.96 0 0 0-.21 1 2.99 2.99 0 0 0 .488 1.716l.032.04a3.04 3.04 0 0 0 1.384 1.1l.012.007c.319.129.657.2 1 .213.393.015.784-.05 1.15-.192.012-.005.021-.013.033-.018a3.01 3.01 0 0 0 1.676-1.7v-.007a2.89 2.89 0 0 0 0-2.207 2.868 2.868 0 0 0-.27-.515c-.007-.012-.02-.025-.03-.039Zm6.137-3.373a2.53 2.53 0 0 1-.349.447l-3.426 3.426c.112.428.166.869.161 1.311a4.954 4.954 0 0 1-.148 1.054l3.413 3.412c.133.134.249.283.347.444A9.88 9.88 0 0 0 22 12.269a9.913 9.913 0 0 0-1.386-5.319ZM16.6 20.264l-3.42-3.421c-.386.1-.782.152-1.18.157h-.135c-.356-.01-.71-.06-1.056-.147L7.4 20.265a2.503 2.503 0 0 1-.444.347A9.884 9.884 0 0 0 11.732 22H12a9.9 9.9 0 0 0 5.044-1.388 2.515 2.515 0 0 1-.444-.348ZM3.735 16.6l3.426-3.426a4.608 4.608 0 0 1-.013-2.367L3.735 7.4a2.508 2.508 0 0 1-.349-.447 9.889 9.889 0 0 0 0 10.1 2.48 2.48 0 0 1 .35-.453Zm5.101-.758a4.959 4.959 0 0 1-.65-.645c-.034-.038-.078-.067-.11-.107L5.15 18.017a.5.5 0 0 0 0 .707l.127.127a.5.5 0 0 0 .706 0l2.932-2.933c-.029-.018-.049-.053-.078-.076Zm-.755-6.928c.03-.037.07-.063.1-.1.183-.22.383-.423.6-.609.046-.04.081-.092.128-.13L5.983 5.149a.5.5 0 0 0-.707 0l-.127.127a.5.5 0 0 0 0 .707l2.932 2.931Z"/>
+                    </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="saturator">Saturate</a></p>
+                    <p>Increases the saturation of the page.
+                    </p>
+                    <div class="options">
+                        <button id="saturator-button">Source Code</button>
+                        <input type="text" placeholder="Change name" maxlength="30" id="saturator-input">
+                        <input type="number" min="0" max="300" placeholder="%" id="saturatechange" style="width:40px;background:var(--modify-color)">
                     </div>
                 </div>
             </div>
@@ -248,6 +310,23 @@
                 </div>
             </div>
             <div>
+                <h3>Blurry Screen
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="aliceblue" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5"/>
+                </svg>
+                </h3>
+                <div>
+                    <p style="color: white">Bookmark: <a href="#" id="blurry">Blur</a></p>
+                    <p>Obfuscates the page.
+                    </p>
+                    <div class="options">
+                        <button id="blurry-button">Source Code</button>
+                        <input type="text" placeholder="Change name" maxlength="30" id="blurry-input">
+                        <input type="number" min="1" max="20" placeholder="Lv" id="blurchange" style="width:30px;background:var(--modify-color)">
+                    </div>
+                </div>
+            </div>
+            <div>
                 <h3>Sepia
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(122, 96, 20)" viewBox="0 0 24 24">
                         <path d="M12.013 6.175 7.006 9.369l5.007 3.194-5.007 3.193L2 12.545l5.006-3.193L2 6.175l5.006-3.194 5.007 3.194ZM6.981 17.806l5.006-3.193 5.006 3.193L11.987 21l-5.006-3.194Z"/>
@@ -261,23 +340,6 @@
                     <div class="options">
                         <button id="sepia-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="sepia-input">
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h3>Blurry Screen
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="aliceblue" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5"/>
-                </svg>
-                </h3>
-                <div>
-                    <p style="color: white">Bookmark: <a href="#" id="blurry">Blur</a></p>
-                    <p>Obfuscates the page.
-                    </p>
-                    <div class="options">
-                        <button id="blurry-button">Source Code</button>
-                        <input type="text" placeholder="Change name" maxlength="30" id="blurry-input">
-                        <input type="number" min="1" max="20" placeholder="Lv" id="blurchange" style="width:30px;background:antiquewhite">
                     </div>
                 </div>
             </div>
@@ -297,26 +359,14 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <h3>Saturate
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(0,255,235)" viewBox="0 0 24 24">
-                        <path d="m7.4 3.736 3.43 3.429A5.046 5.046 0 0 1 12.133 7c.356.01.71.06 1.056.147l3.41-3.412a2.32 2.32 0 0 1 .451-.344A9.89 9.89 0 0 0 12.268 2a10.022 10.022 0 0 0-5.322 1.392c.165.095.318.211.454.344Zm11.451 1.54-.127-.127a.5.5 0 0 0-.706 0l-2.932 2.932c.03.023.05.054.078.077.237.194.454.41.651.645.033.038.077.067.11.107l2.926-2.927a.5.5 0 0 0 0-.707Zm-2.931 9.81c-.025.03-.058.052-.082.082a4.97 4.97 0 0 1-.633.639c-.04.036-.072.083-.115.117l2.927 2.927a.5.5 0 0 0 .707 0l.127-.127a.5.5 0 0 0 0-.707l-2.932-2.931Zm-1.443-4.763a3.037 3.037 0 0 0-1.383-1.1l-.012-.007a2.956 2.956 0 0 0-1-.213H12a2.964 2.964 0 0 0-2.122.893c-.285.29-.509.634-.657 1.013l-.009.016a2.96 2.96 0 0 0-.21 1 2.99 2.99 0 0 0 .488 1.716l.032.04a3.04 3.04 0 0 0 1.384 1.1l.012.007c.319.129.657.2 1 .213.393.015.784-.05 1.15-.192.012-.005.021-.013.033-.018a3.01 3.01 0 0 0 1.676-1.7v-.007a2.89 2.89 0 0 0 0-2.207 2.868 2.868 0 0 0-.27-.515c-.007-.012-.02-.025-.03-.039Zm6.137-3.373a2.53 2.53 0 0 1-.349.447l-3.426 3.426c.112.428.166.869.161 1.311a4.954 4.954 0 0 1-.148 1.054l3.413 3.412c.133.134.249.283.347.444A9.88 9.88 0 0 0 22 12.269a9.913 9.913 0 0 0-1.386-5.319ZM16.6 20.264l-3.42-3.421c-.386.1-.782.152-1.18.157h-.135c-.356-.01-.71-.06-1.056-.147L7.4 20.265a2.503 2.503 0 0 1-.444.347A9.884 9.884 0 0 0 11.732 22H12a9.9 9.9 0 0 0 5.044-1.388 2.515 2.515 0 0 1-.444-.348ZM3.735 16.6l3.426-3.426a4.608 4.608 0 0 1-.013-2.367L3.735 7.4a2.508 2.508 0 0 1-.349-.447 9.889 9.889 0 0 0 0 10.1 2.48 2.48 0 0 1 .35-.453Zm5.101-.758a4.959 4.959 0 0 1-.65-.645c-.034-.038-.078-.067-.11-.107L5.15 18.017a.5.5 0 0 0 0 .707l.127.127a.5.5 0 0 0 .706 0l2.932-2.933c-.029-.018-.049-.053-.078-.076Zm-.755-6.928c.03-.037.07-.063.1-.1.183-.22.383-.423.6-.609.046-.04.081-.092.128-.13L5.983 5.149a.5.5 0 0 0-.707 0l-.127.127a.5.5 0 0 0 0 .707l2.932 2.931Z"/>
-                    </svg>
-                </h3>
-                <div>
-                    <p style="color: white">Bookmark: <a href="#" id="saturator">Saturate</a></p>
-                    <p>Increases the saturation of the page.
-                    </p>
-                    <div class="options">
-                        <button id="saturator-button">Source Code</button>
-                        <input type="text" placeholder="Change name" maxlength="30" id="saturator-input">
-                        <input type="number" min="0" max="300" placeholder="%" id="saturatechange" style="width:40px;background:antiquewhite">
-                    </div>
-                </div>
-            </div>
         </article>
     </main>
     <footer style="margin-top:3rem;">Source code minified with <a style="color:aliceblue;" href="https://chriszarate.github.io/bookmarkleter/" rel="noopener noreferrer" target="_blank">Bookmarkleter</a></footer>
+    <div class="adsimulation">
+        <div class="supersim" id="adsss">Absolutely Not a Scam Product</div>
+        <div class="supersim" id="buy" style="background:rgb(255, 255, 255);padding:1rem 0;color:black;font-size:1.5rem;">Buy this now and regret it later! Limited time offer!</div>
+        <div class="supersim" style="z-index:999999" id="cookies">Click here for cookies!<br>You can trust us!</div>
+    </div>
     <script>
         let xblur = 1; // px
         let xsaturate = 200; // %
@@ -396,6 +446,7 @@
             autoclick: document.querySelector("#autoclick"),
             autoclickBtn: document.querySelector("#autoclick-button"),
             autoclickInp: document.querySelector("#autoclick-input"),
+            adsim: document.querySelector("#adsim"),
             dmSource: `javascript:void%20function(){javascript:void%20function(){javascript:(function(){function%20d(){e=document.createElement(%22style%22),e.textContent=%60*{background-color:var(--bg-color)!important;color:var(--text-color)!important;border-color:var(--text-color)!important;}a,a:visited{color:var(--link-color)!important;}pre,code{background-color:var(--code-bg)!important;}input,textarea,select{background-color:%23444!important;color:var(--text-color)!important;}img{filter:brightness(0.75)contrast(1.2)!important;}video{filter:brightness(0.8)contrast(1.1)!important;}svg,mat-icon{fill:var(--text-color)!important;}span{color:var(--text-color)!important;}button,div[role=%22dialog%22],div[role=%22menuitem%22]{outline:1px%20solid%20var(--text-color)!important;}:root{--text-color:%23e0e0e0;--bg-color:%23222;--link-color:%2382aaff;--code-bg:%23333;}%60,document.head.appendChild(e),b=!0,h.textContent=%22Light%22}function%20a(){e%26%26(e.remove(),e=null),b=!1,h.textContent=%22Dark%22,document.querySelectorAll(%22*%22).forEach(b=%3E{b.style.removeProperty(%22background-color%22),b.style.removeProperty(%22border-color%22)})}let%20b=!1,e=null,h=null;h=document.createElement(%22button%22),h.style.cssText=%60position:fixed;bottom:20px;right:20px;width:45px;height:45px;border-radius:50%25;background-color:black;color:white;border:none;cursor:pointer;z-index:9999;%20display:flex;justify-content:center;align-items:center;outline:1px%20solid%20var(--text-color);%60,h.textContent=%22Dark%22,h.addEventListener(%22click%22,function(){b%3Fa():d()}),document.body.appendChild(h),h.click()})()}()}();`,
             abSource: `javascript:void%20function(){javascript:void%20function(){javascript:(function(){const%20a=()=%3E{[%22.ad%22,%22.adv%22,%22.ads%22,%22.advertisement%22,%22[class*=%5C%22ad-%5C%22]%22,%22[id*=%5C%22ad-%5C%22]%22,%22.social-share%22,%22.newsletter-signup%22,%22.modal%22,%22.overlay%22,%22[class*=%5C%22cookie%5C%22]%22,%22[id*=%5C%22cookie%5C%22]%22,%22.PUBFUTURE%22,%22iframe%22,%22%23sidebar-wrap%22,%22%23advert%22,%22%23xrail%22,%22%23middle-article-advert-container%22,%22%23sponsored-recommendations%22,%22%23around-the-web%22,%22%23sponsored-recommendations%22,%22%23taboola-content%22,%22%23taboola-below-taboola-native-thumbnails%22,%22%23inarticle_wrapper_div%22,%22%23rc-row-container%22,%22%23ads%22,%22%23at-share-dock%22,%22%23at4-share%22,%22%23at4-follow%22,%22%23right-ads-rail%22,%22div%23ad-interstitial%22,%22div%23advert-article%22,%22div%23ac-lre-player-ph%22,%22.ad%22,%22.avert%22,%22.avert__wrapper%22,%22.middle-banner-ad%22,%22.advertisement%22,%22.GoogleActiveViewClass%22,%22.advert%22,%22.cns-ads-stage%22,%22.teads-inread%22,%22.ad-banner%22,%22.ad-anchored%22,%22.js_shelf_ads%22,%22.ad-slot%22,%22.antenna%22,%22.xrail-content%22,%22.advertisement__leaderboard%22,%22.ad-leaderboard%22,%22.trc_rbox_outer%22,%22.ks-recommended%22,%22.article-da%22,%22.gdpr%22,%22[role=%5C%22dialog%5C%22]%22,%22div.sponsored-stories-component%22,%22div.addthis-smartlayers%22,%22div.article-adsponsor%22,%22div.signin-prompt%22,%22div.article-bumper%22,%22div.video-placeholder%22,%22div.top-ad-container%22,%22div.header-ad%22,%22div.ad-unit%22,%22div.demo-block%22,%22div.OUTBRAIN%22,%22div.ob-widget%22,%22div.nwsrm-wrapper%22,%22div.announcementBar%22,%22div.partner-resources-block%22,%22div.arrow-down%22,%22div.m-ad%22,%22div.story-interrupt%22,%22div.taboola-recommended%22,%22div.ad-cluster-container%22,%22div.ctx-sidebar%22,%22div.incognito-modal%22,%22.OUTBRAIN%22,%22.subscribe-button%22,%22.ads9%22,%22.x9f619.x1n2onr6.x1ja2u2z%22,%22.leaderboards%22,%22.GoogleActiveViewElement%22,%22.mpu-container%22,%22.ad-300x600%22,%22.tf-ad-block%22,%22.sidebar-ads-holder-top%22,%22.ads-one%22,%22.FullPageModal__scroller%22,%22.o-banner%22,%22.content-ads-holder%22,%22.widget-area%22,%22.social-buttons%22,%22.ac-player-ph%22,%22script%22,%22aside%23sponsored-recommendations%22,%22aside[role=%5C%22banner%5C%22]%22,%22amp-ad%22,%22span[id^=ad_is_]%22,%22div[class*=%5C%22indianapolis-optin%5C%22]%22,%22div[id^=google_ads_iframe]%22,%22div[data-google-query-id]%22,%22section[data-response]%22,%22ins.adsbygoogle%22,%22div[data-google-query-id]%22,%22div[data-test-id=%5C%22fullPageSignupModal%5C%22]%22,%22div[data-test-id=%5C%22giftWrap%5C%22]%22].forEach(b=%3E{document.querySelectorAll(b).forEach(a=%3E{[%22header%22,%22menu-container%22,%22footer%22,%22masthead%22,%22svg%22,%22path%22,%22masthead-container-row%22,%22button%22,%22nav%22,%22menu%22,%22container%22,%22navbar%22,%22aside%22,%22input%22].every(c=%3E!a.classList.contains(c)%26%26a.id!==c%26%26a.tagName.toLowerCase()!==c)%26%26a.remove()})}),document.querySelectorAll(%22*%22).forEach(a=%3E{const%20b=window.getComputedStyle(a).zIndex;b%26%26!isNaN(b)%26%26999%3Cb%26%26[%22header%22,%22svg%22,%22path%22,%22menu-container%22,%22masthead%22,%22masthead-container-row%22,%22footer%22,%22button%22,%22nav%22,%22menu%22,%22container%22,%22navbar%22,%22aside%22,%22input%22].every(c=%3E!a.classList.contains(c)%26%26a.id!==c%26%26a.tagName.toLowerCase()!==c)%26%26a.remove()})};a(),document.body.style.overflow=%22auto%22;const%20b=document.createElement(%22style%22);b.textContent=%22:root,body{overflow:auto!important}%22,document.head.appendChild(b),setTimeout(a,1e3),setTimeout(a,3e3),setTimeout(a,5e3),setTimeout(a,1e4),setTimeout(a,3e4)})()}()}();`,
             gsSource: `javascript:void%20function(){javascript:(function(){const%20a=document.createElement(%22style%22);a.textContent=%60body{filter:grayscale()!important;}%60,document.head.append(a)})()}();`,
@@ -517,6 +568,18 @@
         elements.zapper.href = elements.zpSource;
         elements.saturate.href = elements.srSource;
         elements.autoclick.href = elements.acSource;
+        let simulation = false
+        function toggleAds() {
+            if (simulation) {
+                document.querySelector(".adsimulation").style.display = "block";
+            } else {
+                document.querySelector(".adsimulation").style.display = "none";
+            }
+        };
+        elements.adsim.addEventListener("click",()=>{
+            simulation = !simulation;
+            toggleAds();
+        });
     </script>
 </body>
 </html>
