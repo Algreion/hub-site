@@ -284,7 +284,7 @@
                     <div class="options">
                         <button id="saturator-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="saturator-input">
-                        <input type="number" min="0" max="300" placeholder="%" id="saturatechange" style="width:40px;background:var(--modify-color)">
+                        <input type="number" min="0" max="999" placeholder="%" id="saturatechange" style="width:40px;background:var(--modify-color)">
                     </div>
                 </div>
             </div>
@@ -367,7 +367,7 @@
                     <div class="options">
                         <button id="blurry-button">Source Code</button>
                         <input type="text" placeholder="Change name" maxlength="30" id="blurry-input">
-                        <input type="number" min="1" max="20" placeholder="Lv" id="blurchange" style="width:30px;background:var(--modify-color)">
+                        <input type="number" min="1" max="99" placeholder="Lv" id="blurchange" style="width:30px;background:var(--modify-color)">
                     </div>
                 </div>
             </div>
@@ -419,8 +419,8 @@
         let xclick2 = "c"; // Keybind
         let xzap = "red"; // color
         let xzap2 = "z"; // Keybind
-        let xhlight1 = "white";
-        let xhlight2 = "black";
+        let xhlight1 = "black";
+        let xhlight2 = "white";
         const blurchange = document.querySelector("#blurchange");
         const saturatechange = document.querySelector("#saturatechange");
         const clickchange1 = document.querySelector("#clickchange1");
@@ -452,7 +452,7 @@
         });
         saturatechange.addEventListener("input", () => {
             xsaturate = saturatechange.value || 200;
-            elements.hlSource = `javascript:void%20function(){javascript:(function(){const%20a=document.createElement(%22style%22);a.textContent=%60body{filter:saturate(${xsaturate}%)!important;}%60,document.head.append(a)})()}();`;
+            elements.srSource = `javascript:void%20function(){javascript:(function(){const%20a=document.createElement(%22style%22);a.textContent=%60body{filter:saturate(${xsaturate}%)!important;}%60,document.head.append(a)})()}();`;
             elements.saturate.href = elements.srSource;
         });
         clickchange1.addEventListener("input", () => {
@@ -649,6 +649,7 @@
         elements.zapper.href = elements.zpSource;
         elements.saturate.href = elements.srSource;
         elements.autoclick.href = elements.acSource;
+        elements.hlighter.href = elements.hlSource;
         let simulation = false
         function toggleAds() {
             if (simulation) {
