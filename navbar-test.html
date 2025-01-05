@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Test</title>
+    <link rel="stylesheet" href="./navbar-test.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand">XYZ Company</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Emmet allows for LOREM with lorem / loremN for N words -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam rerum minus similique molestiae labore iste doloribus repellat quod ipsam perferendis inventore excepturi adipisci, itaque vel eius ea dolorem reprehenderit suscipit!</p>
+    <ol style="list-style:lower-greek">
+        <li>Also</li>
+        <li>you</li>
+        <li>can</li>
+        <li>change</li>
+        <li>list</li>
+        <li>styles</li>
+    </ol>
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0];
+        const navbarLinks = document.querySelector('.links');
+
+        toggleButton.addEventListener("click", () => {
+            navbarLinks.classList.toggle("active");
+        })
+    </script>
+</body>
+</html>
