@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGEX</title>
+    <style>
+        #test {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        body {
+            background: black;
+        }
+        input {
+            min-height: 3rem;
+            background: rgb(210, 234, 255);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+        .res {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            color: white;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        #res div {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <input id="string" type="text" placeholder="String">
+        <input id="regex" type="text" placeholder="Regex">
+    </div>
+    <div class="res">
+        <div id="res1">match:</div>
+        <div id="res2">replace:</div>
+        <div id="res3">search:</div>
+        <div id="res4">split:</div>
+    </div>
+    <script>
+        const string = document.querySelector("#string");
+        const regex = document.querySelector("#regex");
+        const res1 = document.querySelector("#res1");
+        const res2 = document.querySelector("#res2");
+        const res3 = document.querySelector("#res3");
+        const res4 = document.querySelector("#res4");
+        string.addEventListener("input", () => {
+            
+            update();
+            
+            
+        })
+        regex.addEventListener("input", () => {
+            update();
+        })
+        function update () {
+            const str = string.value || "";
+            const reg = new RegExp(regex.value) || "";
+            res1.textContent = "match: " + str.match(reg);
+            res2.textContent = "replace: " + str.replace(reg, "");
+            res3.textContent = "search: " + str.search(reg);
+            res4.textContent = "split: " + str.split(reg);
+        }
+        let email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let phone = /^\(\d{3}\) \d{3}-\d{4}$/;
+        let URL = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\/?$/;
+        let r1 = /abc/ // Matches the pattern exactly, eg: "sl|abc|craft"
+        let r2 = /ab*c/ // Match a single "a" followed by 0 or more "b" followed by c. Eg: abbbc, ac
+        let r3 = /a\*b/ // \ is to escape a special character. That searches for a*b
+        let r4 = /.a/ // Matches any character except newline
+        let r5 = /[A-Z]:\\/ // Searches for "C:\" where C is any letter. Escapes \ as well.
+        let r6 = /\d OR [0-9] | \D/; /* Matches any digit / non-digit */
+        let r8 = /\w | \W / // Word character / non-word character
+        let r9 = /\s | \S/ // Whitespace / non-whitespace 
+        let r10 = /[abc] | [a-z] | [A-Z] | [A-Za-z]/ // Any one of those, any lowercase, any uppercase, upper/lower
+        let r11 = /[^abc]/ // Anything except that
+        let r12 = /a* | a+ | a? | a{n} | a{n,} | a{n,m}/ // 0+, 1+, 0 or 1, exactly n, at least n, n-m
+        let r13 = /^abc | abc$/ // Matches start|end of string
+        let r14 = /\d(?=px) | \d(?!px)/ // Matches digit followed by "px", not followed
+        let r15 = /\b[A-Z][a-z]*\b/ // \b is boundary, this matches all capital words
+    </script>
+</body>
+</html>
