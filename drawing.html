@@ -11,15 +11,17 @@
         <h1>Drawing Board</h1>
         <div class="options">
             <div id="new">
-                <input id="numberInput" value="16">
-                <button>New (N)</button>
+                <input id="numberInput" maxlength="2" placeholder="16">
+                <button id="generate">New (N)</button>
             </div>
             <button id="draw">Draw! (D)</button>
             <button id="clear">Clear (C)</button>
         </div>
-        <div class="board">
+        <div class="board grids">
         </div>
         <div class="colors">
+            <button id="bl">Black</button>
+            <button id="w">White</button>
             <button id="r">Red</button>
             <button id="o">Orange</button>
             <button id="y">Yellow</button>
@@ -27,10 +29,9 @@
             <button id="c">Cyan</button>
             <button id="b">Blue</button>
             <button id="p">Pink</button>
-            <button id="bl">Black</button>
-            <button id="w">White</button>
             <button id="rainbow">?</button>
         </div>
         <button id="current"></button>
+        <button id="grid">Grid</button>
     </body>
 </html>
