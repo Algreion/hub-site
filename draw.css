@@ -7,6 +7,9 @@
     padding: 0;
     margin: 0;
     font-family: Georgia, Arial;
+}
+
+button {
     transition: all 0.1s ease;
 }
 
@@ -16,6 +19,7 @@ body {
     align-items: center;
     gap: 2vh;
     background-color: rgb(7, 0, 39);
+    box-sizing: border-box;
 }
 
 h1 {
@@ -91,22 +95,20 @@ button:hover {
     cursor: pointer;
 }
 
-button:active, .hl {
-    cursor: pointer;
-}
 
 .options button:hover {
     transform: scale(0.9);
 }
 
-.options button:active, .hl {
+.options button:active, .options button.hl {
     transform: scale(0.8);
+    background-color: white;
 }
 
 .colors button:hover {
     transform: scale(1.1);
 }
-.colors button:active, .hl {
+.colors button:active, .colors button.hl {
     transform: scale(1.2);
 }
 
@@ -157,55 +159,55 @@ button:active, .hl {
 #r:hover {
     background-color: rgba(255, 0, 0, 0.5);
 }
-#r:active, .hl {
+#r:active {
     background-color: red;
 }
 #g:hover {
     background-color: rgba(0, 255, 0, 0.5);
 }
-#g:active, .hl {
+#g:active {
     background-color: lime;
 }
 #b:hover {
     background-color: rgba(0, 0, 255, 0.5);
 }
-#b:active, .hl {
+#b:active {
     background-color: blue;
 }
 #y:hover {
     background-color: rgba(255, 255, 0, 0.5);
 }
-#y:active, .hl {
+#y:active {
     background-color: yellow;
 }
 #bl:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
-#bl:active, .hl {
+#bl:active {
     background-color: black;
 }
 #w:hover {
     background-color: rgba(255, 255, 255, 0.5);
 }
-#w:active, .hl {
+#w:active {
     background-color: white;
 }
 #p:hover {
     background-color: rgba(255, 0, 255, 0.5);
 }
-#p:active, .hl {
+#p:active {
     background-color: fuchsia;
 }
 #c:hover {
     background-color: rgba(0, 255, 255, 0.5);
 }
-#c:active, .hl {
+#c:active {
     background-color: cyan;
 }
 #o:hover {
     background-color: rgba(255, 166, 0, 0.5);
 }
-#o:active, .hl {
+#o:active {
     background-color: rgb(255, 115, 0);
 }
 
@@ -219,9 +221,7 @@ button:active, .hl {
     font-size: 1.5rem
 }
 
-.options button:active, .hl {
-    background-color: white;
-}
+
 
 #current {
     width: 5vh;
@@ -244,6 +244,9 @@ button:active, .hl {
 .board .cell {
     width: calc(100% / var(--grid-size));
     height: calc(100% / var(--grid-size));
+}
+.grids * {
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .board:hover {
@@ -269,7 +272,21 @@ button:active, .hl {
     85% { background-color: rgb(140, 0, 255); }
 }
 
-#rainbow:active, .hl {
+#rainbow:active, #rainbow.hl {
     color: black;
     transform: scale(1.2);
+}
+
+#grid {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    padding: 0.5rem;
+    background: rgb(255, 255, 255);
+    opacity: 0.9;
+    font-weight: 900;
+}
+#grid:active {
+    transform: scale(0.9);
 }
