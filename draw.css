@@ -1,9 +1,13 @@
+:root {
+    --board-size: 640px;
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: Georgia, Arial;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 body {
@@ -23,14 +27,14 @@ h1 {
 .board {
     display: flex;
     flex-wrap: wrap;
-    height: 640px;
-    width: 640px;
+    height: var(--board-size);
+    width: var(--board-size);
     background-color: rgb(255, 255, 255);
 }
 
 .options, .colors {
     display: flex;
-    width: 640px;
+    width: var(--board-size);
     justify-content: center;
     gap: 1vh;
 }
@@ -41,6 +45,46 @@ h1 {
     font-size: 2vh;
     border-style: hidden;
     border-radius: 0.5rem;
+}
+
+@media (width <= 650px), (height <= 650px) {
+    :root {
+        --board-size: 512px;
+    }
+}
+
+@media (width <= 522px), (height <= 522px) {
+    :root {
+        --board-size: 448px;
+    }
+    .colors button {
+        width: 40px;
+        font-size: 0;
+    }
+}
+@media (width <= 450px) {
+    :root {
+        --board-size: 320px;
+    }
+    .colors button {
+        width: 30px;
+        font-size: 0;
+    }
+    h1 {
+        text-align: center;
+    }
+}
+@media (width <= 330px) {
+    :root {
+        --board-size: 192px;
+    }
+    .colors button {
+        width: 20px;
+        font-size: 0;
+    }
+    h1 {
+        text-align: center;
+    }
 }
 
 button:hover {
