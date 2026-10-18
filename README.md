@@ -1,2 +1,2 @@
-# First attempt at a site
-Trying out HTML and CSS
+# Hub site
+Main site for all HTML projects.
