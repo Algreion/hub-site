@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1F2937;
+    background: linear-gradient(to top,#1F2937,#000335);
     color: #e7e6e6;
     gap: 2rem;
     margin: 0px;
@@ -12,7 +12,7 @@ body {
 .header {
     font-size: 2rem;
     text-align:center;
-    background-color: #12171f;
+    background-color: #0c0f15;
     padding-bottom: 0.5rem;
     color:white;
 }
