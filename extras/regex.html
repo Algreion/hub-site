@@ -10,6 +10,12 @@
             flex-direction: column;
             gap: 3rem;
         }
+        .field {
+            background-color: rgb(222, 240, 255);
+        }
+        .field:focus {
+            outline-color:rgb(0, 162, 255);
+        }
         body {
             background: black;
         }
@@ -31,18 +37,55 @@
         #res div {
             color: white;
         }
+        hr {
+            margin-top:1rem;
+            margin-bottom:1rem;
+        }
+        .presets {
+            color: white;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .buttons {
+            padding-top:1rem;
+            display:flex;
+            flex-wrap:wrap;
+            gap:1rem;
+        }
+        .button {
+            padding:0.5rem 2rem;
+            color:white;
+            background-color:rgb(2, 2, 30);
+            border-color:aliceblue;
+            border-style:outset;
+            border-radius:5px;
+        }
+        .button:hover {
+            cursor:pointer;
+            background-color:rgb(21, 21, 85);
+        }
     </style>
 </head>
 <body>
     <div id="test">
-        <input id="string" type="text" placeholder="String">
-        <input id="regex" type="text" placeholder="Regex">
+        <input id="string" type="text" class="field" placeholder="String">
+        <input id="regex" type="text" class="field" placeholder="Regex">
     </div>
     <div class="res">
         <div id="res1">match:</div>
         <div id="res2">replace:</div>
         <div id="res3">search:</div>
         <div id="res4">split:</div>
+        <div id="res5">test:</div>
+    </div>
+    <hr>
+    <div class="presets">
+        Presets:
+        <div class="buttons">
+            <button id="email" class="button">Email</button>
+            <button id="phone" class="button">Phone</button>
+            <button id="url" class="button">URL</button>
+            <button id="clear" class="button">Clear</button>
+        </div>
     </div>
     <script>
         const string = document.querySelector("#string");
@@ -51,26 +94,55 @@
         const res2 = document.querySelector("#res2");
         const res3 = document.querySelector("#res3");
         const res4 = document.querySelector("#res4");
+        const email = document.querySelector("#email");
+        const phone = document.querySelector("#phone");
+        const url = document.querySelector("#url");
+        const clear = document.querySelector("#clear");
         string.addEventListener("input", () => {
-            
             update();
-            
-            
-        })
+        });
         regex.addEventListener("input", () => {
             update();
-        })
+        });
         function update () {
             const str = string.value || "";
             const reg = new RegExp(regex.value) || "";
+            
             res1.textContent = "match: " + str.match(reg);
             res2.textContent = "replace: " + str.replace(reg, "");
             res3.textContent = "search: " + str.search(reg);
             res4.textContent = "split: " + str.split(reg);
-        }
-        let email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        let phone = /^\(\d{3}\) \d{3}-\d{4}$/;
-        let URL = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\/?$/;
+            res5.textContent = "test: " + reg.test(str);
+        };
+        
+        let emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        let phoneRegex = String.raw`^\(\d{3}\) \d{3}-\d{4}$`;
+        let urlRegex = "^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\/?$";
+        let emailMock = "john.doe@example.com";
+        let phoneMock = "(555) 555-5555";
+        let urlMock = "https://www.example.com/page";
+        
+        email.addEventListener("click", () => preset(1));
+        phone.addEventListener("click",() => preset(2));
+        url.addEventListener("click",() => preset(3));
+        clear.addEventListener("click",() => preset(4));
+        function preset (n) {
+            if (n==1) {
+                string.value = emailMock;
+                regex.value = emailRegex;
+            } else if (n==2) {
+                string.value = phoneMock;
+                regex.value = phoneRegex;
+            } else if (n==3) {
+                string.value = urlMock;
+                regex.value = urlRegex;
+            } else {
+                string.value = "";
+                regex.value = "";
+            };
+            update();
+        };
+
         let r1 = /abc/ // Matches the pattern exactly, eg: "sl|abc|craft"
         let r2 = /ab*c/ // Match a single "a" followed by 0 or more "b" followed by c. Eg: abbbc, ac
         let r3 = /a\*b/ // \ is to escape a special character. That searches for a*b
