@@ -25,20 +25,20 @@ body {
     padding-left: 1rem;
 }
 
-.project {
+.extra {
     color: rgb(255, 0, 0)
 }
 
-.project:hover {
+.extra:hover {
     color: rgb(255, 142, 142);
     font-weight: bold;
 }
 
-.extra {
+.project {
     color: rgb(0, 255, 0);
 }
 
-.extra:hover {
+.project:hover {
     color: rgb(142, 220, 142);
     font-weight: bold;
 }
