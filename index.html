@@ -1,68 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Main Hub</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <header class="main-header">
-            <div class="logo">Prometheus Inc.</div>
-            <ul class="links"> <!--TODO: Change IDs with class, also separate projects somewhere -->
-                    <li><a href="./bookmarklets.html" id="done">Bookmarklets</a></li>
-                    <li><a href="./drawing.html" id="done">Drawing Board</a></li>
-                    <li><a href="./calculator.html" id="done">Calculator</a></li>
-                    <li><a href="./rps/rps.html" id="done">Rock Paper Scissors</a></li>
-                    <li><a href="./recipes.html" id="done">Recipes</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algreion's Projects</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="title">Projects by Algreion</div>
+    </header>
+    <section class="desc">
+        <div class="desc-content">
+            Dynamic list of my HTML projects.<br>The minimalism is on purpose.
+        </div>
+    </section>
+    <section class="projects">
+        <div>
+            <div class="type">Main Projects</div>
+            <ul>
+                <li><a href="./main/bookmarklets/bmarklets.html" class="project">Bookmarklets</a></li>
+                <li><a href="./main/calculator/calc.html" class="project">Calculator</a></li>
+                <li><a href="./main/sketch/draw.html" class="project">Paint</a></li>
+                <li><a href="./main/rps/rps.html" class="project">Rock Paper Scissors</a></li>
+                <li><a href="./main/gif-viewer.html" class="project">GIF Viewer</a></li>
             </ul>
-        </header>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Forging Realities Beyond Imagination</h1>
-                <p>Where ancient  craftsmanship meets cutting-edge technology. Prometheus Inc. bridges millennia of mythological innovation with today's technological frontiers.
-
-                </p>
-                <button id="done"><a href="./gif-viewer.html">Sign up</a></button>
-            </div>
-            <img src="./anvil.png" alt="Placeholder Image"></img>
-        </section>
-        <section class="info">
-            <h2>Information</h2>
-            <div class="cards">
-                <div class="card">
-                    <img alt="Weapons" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0f/Netherite_Sword_JE2_BE2.png">
-                    <p>Forging the most powerful since time immemorial</p>
-                </div>
-                <div class="card">
-                    <img alt="Artifacts" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2e/Totem_of_Undying_JE2_BE2.png">
-                    <p>Creating all types of artifacts while retaining ancient techniques</p>
-                </div>
-                <div class="card">
-                    <img alt="Technologies" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c0/End_Crystal_%28Slateless%29.gif">
-                    <p>At the forefront of engineering, science and technology.</p>
-                </div>
-                <div class="card">
-                    <img alt="Innovation" src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/55/Enchanted_Book.gif">
-                    <p>Our skills and knowledge are ever-expanding.</p>
-                </div>
-            </div>
-        </section>
-        <blockquote class="quote">
-            <div>
-                <p id="quote"><em>"In our forges, where fire meets future, we continue the eternal tradition of innovation."</em></p>
-                <p id="quoted">- Hephaestus, Chief Innovator</p>
-            </div>
-        </blockquote>
-        <section class="cta">
-            <div class="cta-box">
-                <div class="cta-text">
-                    <h3>Unlock your Divine potential!</h3>
-                    <p>Sign up to commission us any artifact or technology, we guarantee you'll be satisfied!</p>
-                </div>
-                <button><a href="#">Sign up</a></button> 
-            </div>
-        </section>
-        <footer class="footer">Copyright © Prometheus Inc. 2024</footer>
-    </body>
+        </div>
+        <div>
+            <div class="type">Extra - Practice and experiments.</div>
+            <ul>
+                <li><a href="./extras/regex.html" class="extra">Regex</a></li>
+                <li><a href="./extras/recipes/recipes.html" class="extra">Recipes</a></li>
+                <li><a href="./extras/library/books.html" class="extra">Library</a></li>
+                <li><a href="./extras/trivia/trivia.html" class="extra">Trivia</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
 </html>
