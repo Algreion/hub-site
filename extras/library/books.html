@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="books.css">
+    <script src="./books.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 id="logo">LIBRARY OF BABEL</h1>
+        <nav>
+            <a href="#">Browse</a>
+            <a href="#">Library</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+    <main>
+        <div class="infocontainer">
+            <div id="info">Click on a book to view more details.</div>
+            <button id="newbook">Add a Book</button>
+            <button id="mark">Mark as read</button>
+        </div>
+        <div class="shelf"></div>
+    </main>
+    <footer>
+        © 2024 Library of Babel. All rights reserved.
+    </footer>
+    <div id="overlay"></div>
+    <div id="popupForm">
+        <h3 style="text-align: center">Add New Book</h3>
+        <input type="text" id="title" placeholder="Title" required/>
+        <input type="text" id="author" placeholder="Author" required/>
+        <input type="number" id="pages" placeholder="Pages" required/>
+        <input type="checkbox" id="read"/>
+        <div id="buttonspopup">
+            <button id="submitBook">Add Book</button>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+</body>
+</html>
