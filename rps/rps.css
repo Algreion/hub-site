@@ -73,6 +73,10 @@ button:active {
     height: 100px;
 }
 
+img:not([src]), img[src=""] {
+    visibility:hidden;
+}
+
 .status p {
     text-align: center;
     max-width: 100px;
