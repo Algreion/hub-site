@@ -1,10 +1,9 @@
-
 body {
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to top,#1F2937,#000335);
-    color: #e7e6e6;
+    background: #07062e;
+    color: rgb(209, 206, 206);
     gap: 2rem;
     margin: 0px;
 }
@@ -12,7 +11,7 @@ body {
 .header {
     font-size: 2rem;
     text-align:center;
-    background-color: #0c0f15;
+    background-color: #080217;
     padding-bottom: 0.5rem;
     color:white;
 }
@@ -25,20 +24,23 @@ body {
     padding-left: 1rem;
 }
 
-.extra {
-    color: rgb(255, 0, 0)
+details {
+    padding-left: 1rem;
 }
-
-.extra:hover {
-    color: rgb(255, 142, 142);
+summary:hover {
+    cursor:pointer;
     font-weight: bold;
 }
 
-.project {
-    color: rgb(0, 255, 0);
+.html-link {
+    color: rgb(150, 192, 214);
 }
 
-.project:hover {
-    color: rgb(142, 220, 142);
+.html-link:hover {
+    color: rgb(209, 239, 255);
     font-weight: bold;
+}
+
+.html-link:visited {
+    color: rgb(218, 241, 255);
 }
