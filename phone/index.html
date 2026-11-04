@@ -7,16 +7,30 @@
     <title>Smartphone</title>
 </head>
 <body>
-    <div class="screen" id="main-screen">
-        
+    <div class="screen lock" id="main-screen">
+        <div class="lockscreen lockpanel">
+            <span class="lock-date" id="lock-date"></span>
+            <span class="lock-time" id="lock-time"></span>
+        </div>
     </div>
 <script>
 
 const screen = document.getElementById('main-screen')
+const lockDate = document.getElementById('lock-date')
+const lockTime = document.getElementById('lock-time')
 
 screen.addEventListener('click', function() {
-    screen.classList.toggle('rotated')
+    screen.classList.toggle('lock')
 });
+
+const now = new Date();
+
+const weekdays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+let time = `${now.getHours()}:${now.getMinutes()}`;
+let date = `${weekdays[now.getDay()].slice(0,3)}, ${months[now.getMonth()].slice(0,3)} ${now.getDate()}`;
+lockTime.textContent = time;
+lockDate.textContent = date;
 
 </script>
 </body>
