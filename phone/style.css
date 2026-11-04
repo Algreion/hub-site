@@ -1,0 +1,48 @@
+
+* {
+    padding:0;
+    margin:0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: radial-gradient(circle, #7bbdff, #99d3e6);
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.screen {
+    background:black;
+    height: 90vh;
+    aspect-ratio: 11/20;
+    border-radius:1rem;
+    transition: all 0.25s ease;
+}
+
+.screen.rotated {
+    background:white;
+    aspect-ratio: 20/11;
+    max-width: 90vw;
+}
+
+/* MOBILE - must be 767px*/
+@media (max-width: 320px) {
+    body {
+        display:flex;
+    }
+    .screen {
+        border-radius:0;
+        background:white;
+        width:100%;
+        height:100%;
+    }
+    .screen.rotated {
+        background:white;
+        width:100%;
+        height:100%;
+    }
+}
