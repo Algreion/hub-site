@@ -58,7 +58,12 @@ body {
 
 .screen.lock .fingerprint {
     position:relative;
-    top:230%;
+    top:330%;
+    opacity:0.75;
+}
+
+.screen.lock .fingerprint:hover {
+    opacity:1!important;
 }
 
 .screen.home {
@@ -89,6 +94,30 @@ body {
 
 .home-flavor {
     padding-right:1rem;
+}
+
+.screen.home .bottombar {
+    height:5%;
+    background:rgba(0, 0, 0, 0.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.home-button {
+    border-radius:999px;
+    border:solid rgba(255, 255, 255, 0.7) 0.1rem;
+    background:none;
+    width:1rem;
+    height:1rem;
+}
+.home-button:hover {
+    cursor:pointer;
+    border:solid rgba(255, 255, 255) 0.1rem;
+}
+
+.screen.home .contents {
+    flex: 1;
 }
 
 /* MOBILE - must be 767px*/
