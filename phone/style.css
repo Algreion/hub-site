@@ -115,6 +115,65 @@ body {
     flex: 1;
     display:flex;
     flex-wrap:wrap;
+    padding:1rem;
+}
+
+.screen .appscreen {
+    display:none;
+}
+
+.screen.app-google .appscreen {
+    display:flex;
+    background:white;
+    width:100%;
+    height:95%;
+}
+
+.appscreen iframe {
+    resize: none;
+    border:none;
+}
+
+.appscreen.google {
+    overflow: hidden;
+    position: relative;
+    display: flex; /* keep your flex setup */
+}
+
+.appscreen.google iframe {
+    width: 900px;          /* Virtual desktop width for Google */
+    height: 1600px;         /* Virtual desktop height for Google */
+    transform: scale(0.25); /* Shrinks the whole page down to fit your phone */
+    transform-origin: top left; /* Pins it to the top-left corner */
+    position: absolute;
+    border: none;
+}
+
+.screen.app-google .bottombar {
+    height:5%;
+    background:rgba(0, 0, 0, 0.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.app {
+    height:10%;
+    aspect-ratio:1/1;
+    border-radius:0.5rem;
+    background:white;
+    display:grid;
+    place-items:center;
+    position:relative;
+}
+
+.app:hover {
+    transform: scale(1.1);
+}
+.apptext {
+    position:absolute;
+    top:100%;
+    font-size:0.9rem;
 }
 
 /* MOBILE - must be 767px*/
