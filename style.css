@@ -115,7 +115,9 @@ body {
     flex: 1;
     display:flex;
     flex-wrap:wrap;
-    padding:1rem;
+    padding:1rem 0rem 1rem 2rem;
+    gap:2rem;
+    align-content:flex-start;
 }
 
 .screen .appscreen {
@@ -167,16 +169,43 @@ body {
     position:relative;
 }
 
+a {
+    color:white;
+    -webkit-user-drag: none;
+}
+
+#appCalculator {
+    background:rgb(247, 201, 201);
+}
+#appBookmarklets {
+    background: rgb(182, 182, 255);
+}
+#appPaint {
+    background:#beefff;
+}
+#appRPS {
+    background:#c7c9ca;
+}
+#appGifViewer{
+    background:rgb(255, 249, 178);
+}
+#appPython {
+    background:#060259;
+}
+
 .app:hover {
     transform: scale(1.1);
 }
+
 .apptext {
     position:absolute;
     top:100%;
     font-size:0.9rem;
+    text-align:center;
+    line-height:0.9rem;
 }
 
-/* MOBILE - must be 767px*/
+/* MOBILE - must be 448px*/
 @media (max-width: 320px) {
     body {
         display:flex;
