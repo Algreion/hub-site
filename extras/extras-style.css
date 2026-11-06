@@ -1,17 +1,19 @@
+
 body {
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #07062e;
+    background: linear-gradient(45deg,#07062e 50%, #3c398b);
     color: rgb(209, 206, 206);
     gap: 2rem;
-    margin: 0px;
+    height:100vh;
+    margin:0;
 }
 
 .header {
     font-size: 2rem;
     text-align:center;
-    background-color: #080217;
+    background: linear-gradient(130deg, #080217,#280a74);
     padding-bottom: 0.5rem;
     color:white;
 }
@@ -22,14 +24,6 @@ body {
 
 .type {
     padding-left: 1rem;
-}
-
-details {
-    padding-left: 1rem;
-}
-summary:hover {
-    cursor:pointer;
-    font-weight: bold;
 }
 
 .html-link {
