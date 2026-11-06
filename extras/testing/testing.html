@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>CSS Playground</title>
+    <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+    <div class="SVG">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 100">
+            <rect x=0 y=0 width=100 height=100 fill="darkkhaki"/>
+            <path d="M 10 10 H 90 V 90 L 10 60" fill="transparent" stroke="black" stroke-width="3"/>
+            <circle cx=50 cy=50 r=20 class="svg-circle"/>
+            <g class="svg-text-group">
+            <text x="20" y="25" rotate="10" id="hello-text">Hello!</text>
+            <use href="#hello-text" x="-10" y="65" fill="white"/>
+            </g>
+        </svg>
+        </div>
+    <div class="showcase">
+        <div class="TABLE">
+            <h1>Table</h1>
+            <table>
+                    <thead>
+                        <td>TBD</td>
+                        <th>Timmy</td>
+                        <th>Lilith</td>
+                        <th>Beeboop</td>
+                    </thead>
+                <tbody>
+                    <tr>
+                        <th>Age</td>
+                        <td>11</td>
+                        <td>4827</td>
+                        <td rowspan="2">A-31B</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</td>
+                        <td>Male</td>
+                        <td>Female</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <div class="room" id="livingroom">Living Room</div>
+            <div class="room" id="kitchen">Kitchen</div>
+            <div class="room" id="bathroom">Bathroom</div>
+            <div class="room" id="bedroom">Bedroom</div>
+            <div class="room" id="closet">Closet</div>
+            <div class="room" id="hallway">Hallway</div>
+        </div>
+    </div>
+    <div class="texts">
+        <p>Lorem Ipsum, this is some text<br>That is <em>right</em>, this is indeed some kind of text!</p>
+    </div>
+    <div id="eye1">
+        <div id="pupil1"></div>
+    </div>
+    <div id="eye2">
+        <div id="pupil2"></div>
+    </div>
+    <div class="cookie">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 100" fill="rgb(48, 24, 9)">
+            <circle cx=20 cy=50 r=13 class="svg-circle"/>
+            <circle cx=65 cy=31 r=18 class="svg-circle"/>
+            <circle cx=25 cy=15 r=7 class="svg-circle"/>
+            <circle cx=60 cy=62 r=9 class="svg-circle"/>
+            <circle cx=30 cy=74 r=11 class="svg-circle"/>
+        </svg>
+    </div>
+    <div class="forms">
+        <form action="example.com/path" method="post">
+            <label for="first_name">First Name:</label>
+            <input type="name" id="first_name" placeholder="John" name="first_name" maxlength="10">
+            <label for="age">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+            <label for="pass">*Password:</label>
+            <input type="password" id="pass" placeholder="?" name="password" required>
+        </form>
+        <textarea name="idk" id="idk_area" rows="1"></textarea>
+        <select name="Car" id="fav_car">
+            <optgroup label="Cool cars">
+                <option value="tesla">Tesla</option>
+                <option value="lambo" selected>Lamborghini</option>
+            </optgroup>
+            <optgroup label="Boring cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="ford">Ford</option>
+            </optgroup>
+        </select>
+        Other types for input: color, checkbox, radio, url, website... | Button types: reset, submit<br>
+        Other: fieldset and legend to group form stuff together | CSS classes of :valid, :invalid and so on...
+    </div>
+    <div class="drop-down">
+        <button id="dropdown">Click here!</button>
+        <div id="menu" class="invisible">
+            <div>Edit</div>
+            <div>Save</div>
+            <div>Delete</div>
+        </div>
+    </div>
+    <button>Grayscale</button><button>Blur</button><button>Brightness</button><button>Saturation</button><button>Idk</button>
+    <script>
+        let x = false;
+        const dropdown = document.querySelector("#dropdown");
+        const menu = document.querySelector("#menu");
+        dropdown.addEventListener("click", () => {
+            if (x) {
+                menu.className = "invisible";
+                x = !x
+            } else {
+                menu.className = "visible";
+                x = !x
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--
+WEB DESIGN:
+https://fonts.google.com/icons | Icons, Fonts, Knowledge
+https://feathericons.com/ | Icons
+https://www.youtube.com/watch?v=jx5jmI0UlXU | Positions
+https://getbootstrap.com/ | https://tailwindcss.com/ | CSS Frameworks to make it easier
+-->
+
+<!--EMMET:
+Shortcuts
+div.purple creates a div with class purple, div#purple with ID
+    so for example: .class1.class2#id1 (div can be omitted, others need h1#header)
+! is boilerplate code at the start of document
+Children with >, so header#header>nav.box>ul>li*3{List Item $} | If no text, hitting tab moves to next li
+    $: Number (1 2 3), $$: 0-number (01 02 03)
+Siblings with +, so header>nav^+(main>ul>li*3)+footer | ^: Climb up one, or just group together with ()
+-->
+
+<!--
+SVG (Scalable Vector Graphics)
+Images that can be scaled endlessly without loss of quality or increase in size (as they are just formulas)
+Useful for relatively simple graphics, usually used for logos, icons, graphs...
+EXAMPLE:
+<svg
+    xmlns="http://www.w3.org/2000/svg" | dialect of XML (Extensible Markup Language)
+    viewBox="0 0 120 100" | Bounds of SVG (x y scale(inverse) image%)
+>
+    Elements: <rect>, <circle>, <text>...
+-->
